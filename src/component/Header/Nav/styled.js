@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { flexCenter, flexAlignCenter, hasRoundBg } from '../../../../style/_variables.js';
+import { flexCenter, flexAlignCenter } from '@style/mixin/_flexbox';
+import { hoverRoundBgWithMargin, hoverDropShadow } from '@style/mixin/_hoverEffect';
 
-export const NavTop = styled.div`
+export const NavWrap = styled.div`
     ${flexAlignCenter}
     justify-content: space-between;
     height: 8rem;
@@ -11,7 +12,7 @@ export const NavTop = styled.div`
     }
 `;
 
-export const NavTopLogo = styled.li`
+export const NavLogo = styled.div`
     ${flexAlignCenter}
     justify-content: flex-start;
 
@@ -20,32 +21,11 @@ export const NavTopLogo = styled.li`
     }
 `;
 
-export const NavTopTabList = styled.li`
-    ${flexCenter}
-    gap: 1rem;
-    height: 4rem;
-
-    a {
-        ${hasRoundBg}
-        width: 6rem;
-        border-radius: 2rem;
-        
-        span {
-            font-weight: 300;
-        }
-        &:hover,
-        &:focus {
-            span {
-                font-weight: 400;
-            }
-        }
-    }
-`;
-
-export const NavTopMenu = styled.li`
+export const NavMenu = styled.nav`
     ${flexAlignCenter}
     justify-content: flex-end;
     gap: 1rem;
+    min-width: 36rem;
     
     div {
         ${flexAlignCenter}
@@ -56,11 +36,11 @@ export const NavTopMenu = styled.li`
             height: 4rem;
 
             a {
-                ${hasRoundBg}
-                padding: 1rem;
+                ${hoverRoundBgWithMargin}
 
                 img {
                     width: 2rem;
+                    height: 2rem;
                 }
                 span {
                     font-size: 1.4rem;
@@ -72,17 +52,13 @@ export const NavTopMenu = styled.li`
 
             a {
                 ${flexCenter}
+                ${hoverDropShadow}
+                position: relative;
                 justify-content: space-between;
-                width: 9rem;
+                width: 8.5rem;
                 padding: .8rem .8rem .8rem 1.4rem;
                 border: 1px solid #DDD;
                 border-radius: 10rem;
-                transition: all ease .125s;
-
-                &:hover,
-                &:focus {
-                    box-shadow: 0 .25rem .4rem rgba(0,0,0,.15);
-                }
 
                 p:nth-child(1) {
                     width: 2rem;

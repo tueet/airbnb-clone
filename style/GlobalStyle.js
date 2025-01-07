@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import color from "./color/color.js";
 
 const GlobalStyle = createGlobalStyle`
 	html,
@@ -9,10 +10,13 @@ const GlobalStyle = createGlobalStyle`
 	* {
 		margin: 0;
 		padding: 0;
-		font-size: 1.6rem;
-		font-synthesis: none;
 		border: 0;
 		outline: 0;
+		color: ${color.NL800};
+		font-family: 'Pretendard', sans-serif;
+		font-size: 1.6rem;
+		font-synthesis: none;
+		line-height: 1;
 		box-sizing: border-box;
 		vertical-align: baseline;
 	}
@@ -41,8 +45,10 @@ const GlobalStyle = createGlobalStyle`
 	}
 	input,
 	textarea {
+		display: inline-block;
 		font-family: inherit;
 		font-size: inherit;
+		background-color: transparent;
 	}
 `;
 

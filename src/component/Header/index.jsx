@@ -1,14 +1,13 @@
 import React from 'react';
-import NavTopProvider from "./NavTopProvider";
-import { NavWrapper } from './styled.js';
+import Nav from "./Nav";
+import { HeaderWrap } from './styled.js';
 
 function Header() {
     return (
-        <NavWrapper>
-            <NavTopProvider/>
-            {/* <NavSearchBar/> */}
+        <HeaderWrap>
+            <Nav />
             <section className="nav-sub"></section>
-        </NavWrapper>
+        </HeaderWrap>
     );
 }
 

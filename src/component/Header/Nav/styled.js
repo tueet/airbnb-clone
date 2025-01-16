@@ -14,6 +14,7 @@ export const NavWrap = styled.div`
 
 export const NavLogo = styled.div`
     ${flexAlignCenter}
+    z-index: 10;
     justify-content: flex-start;
 
     p {

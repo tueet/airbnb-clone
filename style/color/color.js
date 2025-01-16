@@ -10,12 +10,13 @@ const color = {
      * NL : opacity setting unadded
      * ND : opacity setting added
     */
-	NL900: '#000',
+	NL900: '#000000',
     NL800: '#232323',
-    NL700: '#999',
-    NL300: '#ddd',
+    NL700: '#999999',
+    NL600: '#aaaaaa',
+    NL300: '#dddddd',
     NL200: '#f2f2f2',
-	NL100: '#fff',
+	NL100: '#ffffff',
     
     ND90: 'rgba(0,0,0,.9)',
     ND80: 'rgba(0,0,0,.8)',

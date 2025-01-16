@@ -6,7 +6,6 @@ function Header() {
     return (
         <HeaderWrap>
             <Nav />
-            <section className="nav-sub"></section>
         </HeaderWrap>
     );
 }

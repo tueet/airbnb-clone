@@ -8,7 +8,7 @@ function Nav() {
             <NavSearchBar />
             <NavMenu>
                 <div>
-                    <a><span>당신의 공간을 에어비앤비하세요</span></a>
+                    <a><span>당신의 공간을 에어짭앤비하세요?</span></a>
                     <a>
                         <p>
                             <img src="icon/translate.png" alt="언어 바꾸기" />

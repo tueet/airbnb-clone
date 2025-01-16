@@ -9,15 +9,16 @@ export const NavSearchBarWrap = styled.div`
     height: 100%;
 
     > div {
+        ${flexAlignCenter}
         position: absolute;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        ${flexAlignCenter}
         flex-direction: column;
         width: 100%;
         padding-bottom: 2.4rem;
         border-bottom: 1px solid #ddd;
+        background-color: #fff;
     }
 `;
 
@@ -32,12 +33,12 @@ export const NavTabList = styled.div`
         border-radius: 2rem;
         
         span {
-            font-weight: 300;
+            opacity: .6;
         }
         &:hover,
         &:focus {
             span {
-                font-weight: 400;
+                opacity: 1;
             }
         }
     }

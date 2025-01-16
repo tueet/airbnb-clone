@@ -2,9 +2,17 @@ import { createGlobalStyle } from "styled-components";
 import color from "./color/color.js";
 
 const GlobalStyle = createGlobalStyle`
+	@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
 	html,
 	body {
+		width: 100%;
+		height: 100%;
+		color: ${color.NL800};
+		font-family: 'Roboto Flex', sans-serif;
 		font-size: 62.5%; /* 1rem = 10px */
+		font-style: normal;
+		font-optical-sizing: auto;
 		line-height: 1;
 	}
 	* {
@@ -12,11 +20,11 @@ const GlobalStyle = createGlobalStyle`
 		padding: 0;
 		border: 0;
 		outline: 0;
-		color: ${color.NL800};
-		font-family: 'Pretendard', sans-serif;
+		color: inherit;
 		font-size: 1.6rem;
 		font-synthesis: none;
-		line-height: 1;
+		letter-spacing: -.2px;
+		line-height: inherit;
 		box-sizing: border-box;
 		vertical-align: baseline;
 	}
@@ -35,8 +43,8 @@ const GlobalStyle = createGlobalStyle`
 	}
 	img {
 		width: 100%;
-		height: auto;
-		object-fit: contain;
+		height: 100%;
+		object-fit: cover;
 		object-position: center;
 	}
 	button {
@@ -49,6 +57,10 @@ const GlobalStyle = createGlobalStyle`
 		font-family: inherit;
 		font-size: inherit;
 		background-color: transparent;
+	}
+	
+	.font-pretendard {
+		font-family: 'Pretendard', sans-serif;
 	}
 `;
 

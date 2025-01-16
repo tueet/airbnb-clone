@@ -13,6 +13,7 @@ export default defineConfig({
     alias: {
       '@': getAliasPath('./src'),
       '@style': getAliasPath('./style'),
+      '@constant': getAliasPath('./src/constant'),
     }
   }
 })

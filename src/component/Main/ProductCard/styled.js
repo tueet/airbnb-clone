@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import color from "@style/color/color.js"
 import { flexAlignCenter } from "@style/mixin/_flexbox.js"
-import { transitionDefault } from "@style/mixin/_hoverEffect.js"
+import { hoverEnlargement } from "@style/mixin/_hoverEffect.js"
 
 export const ProdCardWrap = styled.div`
 	display: grid;
@@ -22,6 +22,7 @@ export const ProdCardContent = styled.div`
 	line-height: 1.4;
 	
 	.card-badge {
+		z-index: 1;
 		position: absolute;
 		top: 1.2rem;
 		left: 1.2rem;
@@ -32,14 +33,17 @@ export const ProdCardContent = styled.div`
 		box-shadow: 0 .25rem .4rem ${color.ND10};
 	}
 	.card-wish-btn {
+		${hoverEnlargement}
+		z-index: 1;
 		position: absolute;
 		top: 1.4rem;
 		right: 1.4rem;
 		width: 2.4rem;
-		filter: invert(1);
 
-		&.act {
-			filter: brightness(0) saturate(100%) invert(41%) sepia(76%) saturate(4304%) hue-rotate(328deg) brightness(100%) contrast(102%);
+		img{
+			&.act {
+				filter: brightness(0) saturate(100%) invert(41%) sepia(76%) saturate(4304%) hue-rotate(328deg) brightness(100%) contrast(102%);
+			}
 		}
 	}
 

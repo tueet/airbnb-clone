@@ -2,7 +2,13 @@ import { css } from 'styled-components';
 import color from "@style/color/color.js";
 
 export const transitionDefault = css`
-    transition: all ease .125s;
+    transition: all ease 125ms;
+`;
+export const transition150 = css`
+    transition: all ease 150ms;
+`;
+export const transition200 = css`
+    transition: all ease 200ms;
 `;
 
 export const hoverRoundBg = css`
@@ -52,5 +58,15 @@ export const hoverDropShadow = css`
     &:hover,
     &:focus {
         box-shadow: 0 .25rem .4rem ${color.ND15};
+    }
+`;
+
+export const hoverEnlargement = css`
+    ${transition200}
+    transform: scale(1);
+
+    &:hover,
+    &:focus-visible {
+        transform: scale(1.1);
     }
 `;

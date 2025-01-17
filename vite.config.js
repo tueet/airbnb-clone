@@ -12,8 +12,10 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': getAliasPath('./src'),
-      '@style': getAliasPath('./style'),
       '@constant': getAliasPath('./src/constant'),
+      '@data': getAliasPath('./src/data'),
+      '@style': getAliasPath('./style'),
+      '@utils': getAliasPath('./src/utils'),
     }
   }
 })

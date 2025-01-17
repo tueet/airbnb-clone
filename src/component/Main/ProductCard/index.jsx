@@ -1,37 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { product } from "@/data.js";
+import { getFormattedCurrency } from '@utils/formatUtils';
+import { productData } from "@data/productData";
 import { ProdCardWrap, ProdCardContent } from './styled.js';
+import { Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 function ProductCard() {
-	useEffect
+	const [cards, setCards] = useState(productData);
 
-	let [ wish, setWish ] = useState(false);
-	console.log(wish ? 'true' : 'false');
-
-	const productDataList = Array.from({ length: 50 }, (_, index) => ({
-		...product[index % product.length],
-		id: index + 1,
-	}));
-
-	const shuffleArray = (array) => {
-		for (let i = array.length - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * (i + 1)); 	// 0부터 i까지의 무작위 인덱스 생성
-			[array[i], array[j]] = [array[j], array[i]]; 	// 두 요소를 교환
-		}
-		return array;
-	}
-
- 	function formatCurrency (price) {
-		return price.toLocaleString('ko-KR', {
-			style: 'currency',
-			currency: 'KRW',
-		});
-	}
+	const toggleWishlist = (id) => {
+    setCards((prevCards) =>
+      prevCards.map((card) =>
+        card.id === id
+          ? { ...card, isWishlisted: !card.isWishlisted }
+          : card
+      )
+    );
+  };
 	
 	return (
 		<ProdCardWrap>
 			{
-				shuffleArray(productDataList).map((prod)=>{
+				cards.map((prod)=>{
 				return(
 					<ProdCardContent key={ prod.id }>
 						{
@@ -46,16 +36,20 @@ function ProductCard() {
 							:
 								''
 						}
-						<button type="button" className="card-wish-btn" onClick={()=>{ setWish(true) }}>
-							{
-								wish === false
-								? <img src="icon/heart.svg" alt="wish" />
-								: <img src="icon/heart-filled.svg" alt="wish" />
-							}
+						<button type="button" className="card-wish-btn" onClick={()=> toggleWishlist(prod.id)}>
+							<img src="icon/heart.svg" alt="wish" className={`${prod.isWishlisted === true ? 'act' : ''}`}/>
 						</button>
-						<div className="card-img">
-							<img src={ prod.img } alt={ prod.location } />
-						</div>
+						<Swiper
+							className="card-img"
+							modules={[Pagination]}
+							slidesPerView={1}
+							pagination
+						>
+							<SwiperSlide><img src={ prod.img } alt={ prod.location } /></SwiperSlide>
+							<SwiperSlide><img src={ prod.img } alt={ prod.location } /></SwiperSlide>
+							<SwiperSlide><img src={ prod.img } alt={ prod.location } /></SwiperSlide>
+							<SwiperSlide><img src={ prod.img } alt={ prod.location } /></SwiperSlide>
+						</Swiper>
 						<div className="card-info">
 							<div className="card-info-address">
 								<p>
@@ -80,7 +74,7 @@ function ProductCard() {
 									''
 							}
 							<div className="card-info-price">
-								<span>{ formatCurrency(prod.price) }</span>
+								<span>{ getFormattedCurrency(prod.price) }</span>
 								<span>/박</span>
 							</div>
 						</div>

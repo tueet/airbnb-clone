@@ -1,13 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { BrowserRouter, RouterProvider } from "react-router-dom"
+import { router } from './router'
+import App from './App.jsx'
 import GlobalStyle from "../style/GlobalStyle.js"
 
-import { router } from './router'
-console.log(router);
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const queryClient = new QueryClient();
 

@@ -62,6 +62,31 @@ const GlobalStyle = createGlobalStyle`
 	.font-pretendard {
 		font-family: 'Pretendard', sans-serif;
 	}
+
+	.swiper {
+		z-index: 0;
+		width: 100%;
+
+		.swiper-pagination {
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			justify-content: center;
+			gap: .4rem;
+			width: 30%;
+			height: .8rem;
+			white-space: nowrap;
+			overflow: auto;
+			filter: grayscale(1) brightness(0) invert(1);
+
+			.swiper-pagination-bullet {
+				width: .6rem;
+				height: .6rem;
+				margin: 0;
+				opacity: .5;
+			}
+		}
+	}
 `;
 
 export default GlobalStyle;

@@ -18,11 +18,29 @@ export const CategoryWrap = styled.div`
 `;
 
 export const CategoryContent = styled.div`
+    position: relative;
     ${flexAlignCenter}
     flex-shrink: 1;
     width: calc(100vw - 17.4rem);
     overflow-x: hidden;
     
+    &::after,
+    &::before {
+        content: "";
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        width: 40px;
+        height: 100%;
+    }
+    &::after {
+        right: 0;
+        background-image: linear-gradient(to right, rgba(255,255,255,0), #fff);
+    }
+    &::before {
+        left: 0;
+        background-image: linear-gradient(to left, rgba(255,255,255,0), #fff);
+    }
     ul {
         position: relative;
         display: flex;
@@ -44,7 +62,7 @@ export const CategoryContent = styled.div`
                 gap: .8rem;
                 width: auto;
                 padding: 1.2rem 0 1rem;
-                opacity: .4;
+                opacity: .6;
                 
                 &::after {
                     ${transitionDefault}
@@ -59,10 +77,10 @@ export const CategoryContent = styled.div`
                     opacity: 0;
                 }
                 &:hover {
-                    opacity: .65;
+                    opacity: .85;
 
                     &::after {
-                        opacity: .2;
+                        opacity: .3;
                     }
                 }
                 &:focus,

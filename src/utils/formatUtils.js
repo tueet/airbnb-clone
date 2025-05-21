@@ -23,5 +23,5 @@ export const getFormattedDate = (startDate = '', endDate = '') => {
     ? `${new Date(endDate).getDate()}일`     // 같은 월이면 날짜만 표시
     : formatter.format(new Date(endDate));  // 월이 다르면 전체 날짜 표시
 
-  return `${start}~${end}`;
+  return `${start} ~ ${end}`;
 };
